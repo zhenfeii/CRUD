@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>电影管理页面</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>电影名称</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody  th:each="movie : ${movielist}">
+            <tr>
+                <th th:text="${movie.id}"></th>
+                <th ><a th:href="@{/movie/update/{id}(id=${movie.id})}" th:text="${movie.moviename}"></a></th>
+                <th th:text="${movie.creatdate}"></th>
+                <th><a th:href="@{/movie/delete/{id}(id=${movie.id})}" >删除</a></th>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/movie/create}">新建</a>
+</body>
+</html>

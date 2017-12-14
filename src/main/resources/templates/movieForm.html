@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <form th:action="@{/movie/{action}(action=${action})}" method="post">
+            <input  type="hidden" name="id" th:value="${movie.id}" />
+            电影名称: <input  name="moviename" th:value="${movie.moviename}" /><br />
+            <input type="submit" href="" value="提交"/>
+        </form>
+    </div>
+</body>
+</html>
